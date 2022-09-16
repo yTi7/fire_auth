@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Navbar from "../compononets/Navbar";
 import { UserAuth } from "../context/AuthContext";
 
-const account = () => {
+const Account = () => {
   const { user, logout } = UserAuth();
   const history = useRouter();
 
@@ -11,7 +11,7 @@ const account = () => {
     if (user == null) {
       history.push("/");
     }
-  }, []);
+  }, [user, history]);
 
   return (
     <>
@@ -24,4 +24,4 @@ const account = () => {
   );
 };
 
-export default account;
+export default Account;

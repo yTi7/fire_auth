@@ -4,7 +4,7 @@ import { GoogleButton } from "react-google-button";
 import { UserAuth } from "../context/AuthContext";
 import { useRouter } from "next/router";
 
-const signin = () => {
+const Signin = () => {
   const { googleSignIn, user } = UserAuth();
   const history = useRouter();
 
@@ -21,7 +21,7 @@ const signin = () => {
       console.log(user);
       history.push("/account");
     }
-  }, [user]);
+  }, [user, history]);
 
   return (
     <>
@@ -36,4 +36,4 @@ const signin = () => {
   );
 };
 
-export default signin;
+export default Signin;
