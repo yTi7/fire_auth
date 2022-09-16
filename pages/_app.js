@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import { AuthContestProvider } from "../context/AuthContext";
+import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <AuthContestProvider>
+      <Component {...pageProps} />
+    </AuthContestProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
